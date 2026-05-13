@@ -12,10 +12,10 @@ $ bundle lock --add-checksums
 ## 3. Execution
 
 ```command
-$ ruby main.rb 
-Provide the target extension of files whose delimiter you would like to make changes to:
+$ rake run_itunes_file_delimiter_replacer
+Provide the target extension of files whose delimiter you would like to make changes to(e.g., .m4a)
 .m4a
-Provide the delimiter you would like to replace the original one with(Default: `_`):
+Provide the delimiter you would like to replace the original one with(Default: `_`)
 _
 Provide d(dry_run: default) to make sure what directories and files are to be delete first. Then, provide e(execution) if you would truly like to delete the files. This operation is cannot be undone, so be alert to your operation!
 e
@@ -60,11 +60,11 @@ Inspecting 5 files.....
 
 ```command
 $ rbs-inline --output sig/generated/ .
-🎉 Generated 3 RBS files under sig/generated
+🎉 Generated 2 RBS files under sig/generated
 $ steep check
 # Type checking files:
 
-......
+....
 
-No type error detected. 🫖
+No type error detected. 🧉
 ```
