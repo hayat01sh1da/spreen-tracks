@@ -11,10 +11,13 @@ $ pip install -r requirements.txt
 ## 3. Execution
 
 ```command
-$ python main.py
-Provide the target extension of files whose delimiter you would like to make changes to(e.g., .m4a): .m4a
-Provide the delimiter you would like to replace the original one with(Default: `_`): _
-Provide d(dry_run: default) to make sure what directories and files are to be delete first. Then, provide e(execution) if you would truly like to delete the files. This operation is cannot be undone, so be alert to your operation!: e
+$ invoke run_itunes_file_delimiter_replacer
+Provide the target extension of files whose delimiter you would like to make changes to(e.g., .m4a)
+.m4a
+Provide the delimiter you would like to replace the original one with(Default: `_`)
+_
+Provide d(dry_run: default) to make sure what directories and files are to be delete first. Then, provide e(execution) if you would truly like to delete the files. This operation is cannot be undone, so be alert to your operation!
+e
 Target extension is `.m4a`
 ========== [EXECUTION] Total File Count to Clean: 4 ==========
 ========== [EXECUTION] The delimiters of those files will be replaced with `_` ==========
@@ -30,7 +33,7 @@ Target extension is `.m4a`
 ## 4. Unit Test
 
 ```command
-$ pytest .
+$ invoke
 ============================= test session starts ==============================
 platform linux -- Python 3.14.5, pytest-9.0.3, pluggy-1.6.0
 rootdir: itunes-file-delimiter-replacers/python
@@ -46,9 +49,6 @@ test/test_application.py ....                                            [100%]
 
 ```command
 $ flake8 .
-./main.py:10:80: E501 line too long (112 > 79 characters)
-./main.py:12:80: E501 line too long (83 > 79 characters)
-./main.py:14:80: E501 line too long (102 > 79 characters)
 ./src/application.py:35:80: E501 line too long (81 > 79 characters)
 ./src/application.py:48:80: E501 line too long (88 > 79 characters)
 ./src/application.py:66:80: E501 line too long (101 > 79 characters)
