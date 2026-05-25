@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # rbs_inline: enabled
 
 class Application
@@ -28,6 +29,7 @@ class Application
   def replace
     output "Target extension is `#{extension}`"
     output "========== [#{exec_mode}] No #{extension} Remains ==========" and return if paths.empty?
+
     output "========== [#{exec_mode}] Total File Count to Clean: #{paths.length} =========="
     output "========== [#{exec_mode}] The delimiters of those files will be replaced with `#{delimiter}` =========="
     output "========== [#{exec_mode}] Start! =========="
@@ -36,7 +38,7 @@ class Application
       output "========== [#{exec_mode}] Replacing the delimiter: `#{before}` => `#{after}` =========="
 
       if mode == 'e'
-        FileUtils.mkdir_p(File.dirname(after)) if after.match?(/Disc\d{1}\//)
+        FileUtils.mkdir_p(File.dirname(after)) if after.match?(%r{Disc\d{1}/})
         FileUtils.mv(before, after) if before != after
       end
     end
@@ -49,7 +51,7 @@ class Application
   def validate_mode!
     case mode
     when 'd', 'e'
-      return
+      nil
     else
       raise InvalidModeError, "#{mode} is invalid mode. Provide either `d`(default) or `e`."
     end
@@ -62,9 +64,9 @@ class Application
   # @rbs bash: Hash[String, String]
   # @rbs return: Hash[String, String]
   def file_conversion_map(hash = {})
-    @file_conversion_map ||= paths.map.with_object(hash) { |path, hash|
+    @file_conversion_map ||= paths.map.with_object(hash) do |path, hash|
       hash[path] = after(path)
-    }
+    end
   end
 
   # @rbs path: String
@@ -73,13 +75,13 @@ class Application
     elements     = path.split('/')
     old_filename = elements.last
 
-    new_filename = if old_filename.match?(/^\d{1}\-/)
-      old_filename
-        .gsub(/^(?<disc_number>\d{1})\-/, 'Disc\k<disc_number>/')
-        .gsub(/(?<disc_number>Disc\d{1})\/(?<track_number>\d{2})\s/, '\k<disc_number>/\k<track_number>' + delimiter)
-    else
-      old_filename.gsub(/(?<track_number>\d{2})\s/, '\k<track_number>' + delimiter)
-    end
+    new_filename = if old_filename.match?(/^\d{1}-/)
+                     old_filename
+                       .gsub(/^(?<disc_number>\d{1})-/, 'Disc\k<disc_number>/')
+                       .gsub(%r{(?<disc_number>Disc\d{1})/(?<track_number>\d{2})\s}, "\\k<disc_number>/\\k<track_number>#{delimiter}")
+                   else
+                     old_filename.gsub(/(?<track_number>\d{2})\s/, "\\k<track_number>#{delimiter}")
+                   end
 
     elements[-1] = new_filename
     elements.join('/')
@@ -92,7 +94,7 @@ class Application
 
   # @rbs return: bool
   def test_env?
-    caller[-1].split('/').last.match?(/minitest\.rb/)
+    caller(0..0).first.split('/').last.include?('minitest.rb')
   end
 
   # @rbs message: String
