@@ -19,17 +19,20 @@ def __cleanup_caches__() -> Iterator[None]:
                 dirs.remove(name)
 
 
-@pytest.fixture
-def base_dir() -> Iterator[str]:
-    directory = os.path.join('.', 'test', 'Artist')
-    paths = (
+def _fixture_paths(directory: str) -> tuple[str, ...]:
+    return (
         os.path.join(directory, 'Album1', '1-01 Title.m4a'),
         os.path.join(directory, 'Album1', '2-01 Title.m4a'),
         os.path.join(directory, 'Album2', '01 Title.m4a'),
         os.path.join(directory, 'Album2', '02 Title.m4a'),
         os.path.join(directory, 'Album3', '01 Title.mp3'),
     )
-    for path in paths:
+
+
+@pytest.fixture
+def base_dir() -> Iterator[str]:
+    directory = os.path.join('.', 'test', 'Artist')
+    for path in _fixture_paths(directory):
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, 'w', encoding='utf-8') as f:
             f.write('')
