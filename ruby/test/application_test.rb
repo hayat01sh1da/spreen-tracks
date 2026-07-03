@@ -67,6 +67,7 @@ class ApplicationTest < Minitest::Test
 
   attr_reader :extension, :base_dir
 
+  # @rbs return: Array[String]
   def fixture_paths
     [
       File.join(base_dir, 'Album1', '1-01 Title.m4a'),
