@@ -7,13 +7,7 @@ require_relative '../src/application'
 class ApplicationTest < Minitest::Test
   def setup
     @base_dir = File.join('.', 'test', 'Artist')
-    [
-      File.join(base_dir, 'Album1', '1-01 Title.m4a'),
-      File.join(base_dir, 'Album1', '2-01 Title.m4a'),
-      File.join(base_dir, 'Album2', '01 Title.m4a'),
-      File.join(base_dir, 'Album2', '02 Title.m4a'),
-      File.join(base_dir, 'Album3', '01 Title.mp3')
-    ].each do |path|
+    fixture_paths.each do |path|
       FileUtils.mkdir_p(File.dirname(path))
       FileUtils.touch(path)
     end
@@ -72,4 +66,15 @@ class ApplicationTest < Minitest::Test
   private
 
   attr_reader :extension, :base_dir
+
+  # @rbs return: Array[String]
+  def fixture_paths
+    [
+      File.join(base_dir, 'Album1', '1-01 Title.m4a'),
+      File.join(base_dir, 'Album1', '2-01 Title.m4a'),
+      File.join(base_dir, 'Album2', '01 Title.m4a'),
+      File.join(base_dir, 'Album2', '02 Title.m4a'),
+      File.join(base_dir, 'Album3', '01 Title.mp3')
+    ]
+  end
 end

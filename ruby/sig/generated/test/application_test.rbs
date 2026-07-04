@@ -18,4 +18,7 @@ class ApplicationTest < Minitest::Test
   attr_reader extension: untyped
 
   attr_reader base_dir: untyped
+
+  # @rbs return: Array[String]
+  def fixture_paths: () -> Array[String]
 end
