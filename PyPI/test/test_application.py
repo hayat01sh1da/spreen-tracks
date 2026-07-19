@@ -3,7 +3,7 @@ import os
 
 import pytest
 
-from application import Application
+from spreen_tracks import Application
 
 
 def _list_files(base_dir: str) -> list[str]:
