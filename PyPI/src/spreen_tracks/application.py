@@ -1,5 +1,4 @@
 import glob
-import inspect
 import os
 import re
 import shutil
@@ -40,7 +39,7 @@ class Application:
                 )
 
     def replace(self) -> None:
-        self._output(f'Target extension is `{self._extension}`')
+        print(f'Target extension is `{self._extension}`')
         if not self._paths:
             self._announce_empty()
             return
@@ -51,30 +50,30 @@ class Application:
     # private
 
     def _announce_empty(self) -> None:
-        self._output(
+        print(
             f'========== [{self._exec_mode()}] '
             f'No {self._extension} Remains ==========')
 
     def _announce_start(self) -> None:
-        self._output(
+        print(
             f'========== [{self._exec_mode()}] '
             f'Total File Count to Clean: {len(self._paths)} ==========')
-        self._output(
+        print(
             f'========== [{self._exec_mode()}] '
             f'The delimiters of those files will be replaced with '
             f'`{self._delimiter}` =========='
         )
-        self._output(f'========== [{self._exec_mode()}] Start! ==========')
+        print(f'========== [{self._exec_mode()}] Start! ==========')
 
     def _announce_finish(self) -> None:
-        self._output(f'========== [{self._exec_mode()}] Done! ==========')
-        self._output(
+        print(f'========== [{self._exec_mode()}] Done! ==========')
+        print(
             f'========== [{self._exec_mode()}] '
             f'Total Target File Count: {len(self._paths)} ==========')
 
     def _apply_renames(self) -> None:
         for before, after in self._file_conversion_map().items():
-            self._output(
+            print(
                 f'========== [{self._exec_mode()}] '
                 f'Replacing the delimiter: `{before}` => `{after}` ==========')
             if self._mode == 'e':
@@ -117,13 +116,3 @@ class Application:
 
     def _exec_mode(self) -> str:
         return 'EXECUTION' if self._mode == 'e' else 'DRY RUN'
-
-    def _test_env(self) -> bool:
-        stack = inspect.stack()
-        if not stack:
-            return False
-        return 'pytest' in os.path.basename(stack[-1].filename)
-
-    def _output(self, message: str) -> None:
-        if not self._test_env():
-            print(message)
