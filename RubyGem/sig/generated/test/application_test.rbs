@@ -15,8 +15,6 @@ class ApplicationTest < Minitest::Test
 
   private
 
-  attr_reader extension: untyped
-
   attr_reader base_dir: untyped
 
   # @rbs return: Array[String]

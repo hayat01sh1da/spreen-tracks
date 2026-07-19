@@ -1,0 +1,26 @@
+# Generated from test/cli_test.rb with RBS::Inline
+
+class CLITest < Minitest::Test
+  def setup: () -> untyped
+
+  def teardown: () -> untyped
+
+  def test_dry_run_by_default: () -> untyped
+
+  def test_execution_mode_with_specific_delimiter: () -> untyped
+
+  def test_extension_option: () -> untyped
+
+  def test_invalid_mode: () -> untyped
+
+  def test_version: () -> untyped
+
+  def test_help: () -> untyped
+
+  private
+
+  attr_reader base_dir: untyped
+
+  # @rbs return: Array[String]
+  def fixture_paths: () -> Array[String]
+end

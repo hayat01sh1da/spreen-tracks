@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="spreen-tracks: an origami falcon stooping from a scattered note into the settled disc across a falcon's-eye stone">
+  <defs>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d5a68"/>
+      <stop offset="1" stop-color="#1d2f3a"/>
+    </linearGradient>
+    <clipPath id="round">
+      <circle cx="128" cy="128" r="118"/>
+    </clipPath>
+  </defs>
+
+  <!-- falcon's-eye stone -->
+  <circle cx="128" cy="128" r="118" fill="url(#stone)"/>
+
+  <!-- chatoyant band sweeping across the stone -->
+  <g clip-path="url(#round)">
+    <rect x="-60" y="106" width="440" height="44" fill="#ffffff" opacity="0.08" transform="rotate(45 128 128)"/>
+    <rect x="-60" y="122" width="440" height="12" fill="#ffffff" opacity="0.14" transform="rotate(45 128 128)"/>
+  </g>
+
+  <!-- the tracks: the scattered note, the trail of the dive, the settled disc -->
+  <line x1="66" y1="66" x2="186" y2="186" stroke="#9fb8c2" stroke-width="4" stroke-dasharray="1 14" stroke-linecap="round" opacity="0.7"/>
+  <g fill="#9fb8c2">
+    <!-- a beamed pair of eighth notes: the track as iTunes imported it -->
+    <ellipse cx="40" cy="74" rx="7" ry="5"/>
+    <ellipse cx="62" cy="70" rx="7" ry="5"/>
+    <polygon points="45,73 45,40 69,36 69,69 65,69 65,41 49,44 49,73"/>
+  </g>
+  <!-- the disc: the track settled into DiscN/ -->
+  <circle cx="200" cy="200" r="15" fill="none" stroke="#9fb8c2" stroke-width="5"/>
+  <circle cx="200" cy="200" r="4" fill="#9fb8c2"/>
+
+  <!-- origami falcon in a stoop, diving from the note into the disc -->
+  <g>
+    <!-- trailing wing (far side) -->
+    <polygon points="98,122 26,76 90,148" fill="#c3d4da"/>
+    <!-- body: the dart of the dive -->
+    <polygon points="190,190 82,90 110,64" fill="#f4f7f8"/>
+    <!-- leading wing (near side) -->
+    <polygon points="126,94 172,22 152,88" fill="#dde8ec"/>
+    <!-- the falcon's eye -->
+    <circle cx="170" cy="167" r="6" fill="#f0b429"/>
+  </g>
+
+  <!-- polished rim of the stone -->
+  <circle cx="128" cy="128" r="118" fill="none" stroke="#9fb8c2" stroke-opacity="0.55" stroke-width="4"/>
+</svg>

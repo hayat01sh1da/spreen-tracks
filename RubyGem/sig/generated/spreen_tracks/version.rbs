@@ -1,0 +1,5 @@
+# Generated from lib/spreen_tracks/version.rb with RBS::Inline
+
+module SpreenTracks
+  VERSION: ::String
+end

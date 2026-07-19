@@ -1,0 +1,70 @@
+# Generated from lib/spreen_tracks/application.rb with RBS::Inline
+
+module SpreenTracks
+  # Walks the current directory looking for media files with the given extension
+  # and rewrites their filenames so the space delimiter becomes a configurable
+  # character (and `N-` disc prefixes become `DiscN/` subdirectories).
+  class Application
+    class InvalidModeError < StandardError
+    end
+
+    # @rbs extension: String
+    # @rbs delimiter: String
+    # @rbs mode: String
+    # @rbs return: void
+    def self.run: (?extension: String, ?delimiter: String, ?mode: String) -> void
+
+    # @rbs extension: String
+    # @rbs delimiter: String
+    # @rbs mode: String
+    # @rbs return: void
+    def initialize: (?extension: String, ?delimiter: String, ?mode: String) -> void
+
+    # @rbs return: void
+    def replace: () -> void
+
+    # @rbs return: void
+    def validate_mode!: () -> void
+
+    private
+
+    attr_reader paths: untyped
+
+    attr_reader extension: untyped
+
+    attr_reader delimiter: untyped
+
+    attr_reader mode: untyped
+
+    # @rbs return: void
+    def announce_empty: () -> void
+
+    # @rbs return: void
+    def announce_start: () -> void
+
+    # @rbs return: void
+    def announce_finish: () -> void
+
+    # @rbs return: void
+    def apply_renames: () -> void
+
+    # @rbs before: String
+    # @rbs after: String
+    # @rbs return: void
+    def rename: (String before, String after) -> void
+
+    # @rbs return: Hash[String, String]
+    def file_conversion_map: () -> Hash[String, String]
+
+    # @rbs path: String
+    # @rbs return: String
+    def after: (String path) -> String
+
+    # @rbs filename: String
+    # @rbs return: String
+    def rewrite_filename: (String filename) -> String
+
+    # @rbs return: String
+    def exec_mode: () -> String
+  end
+end
