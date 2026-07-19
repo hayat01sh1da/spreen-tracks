@@ -1,0 +1,8 @@
+# Generated from lib/spreen_tracks.rb with RBS::Inline
+
+# Spreens a music library — the falcon's stoop, then the preen: walks the
+# current directory for media files with a given extension and rewrites their
+# filenames so the space after the track number becomes a configurable
+# delimiter and `N-` disc prefixes become `DiscN/` subdirectories.
+module SpreenTracks
+end

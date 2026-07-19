@@ -1,0 +1,48 @@
+# Generated from lib/spreen_tracks/cli.rb with RBS::Inline
+
+module SpreenTracks
+  # Command line interface behind the `track-delimiter` executable:
+  # `track-delimiter [--extension EXT] [--delimiter CHAR] [--mode d|e]`.
+  class CLI
+    MODES: Array[String]
+
+    # @rbs argv: Array[String]
+    # @rbs return: Integer
+    def self.start: (?Array[String] argv) -> Integer
+
+    # @rbs argv: Array[String]
+    # @rbs return: void
+    def initialize: (Array[String] argv) -> void
+
+    # @rbs return: Integer
+    def run: () -> Integer
+
+    private
+
+    attr_reader argv: Array[String]
+
+    attr_reader extension: String
+
+    attr_reader delimiter: String
+
+    attr_reader mode: String
+
+    attr_reader action: Symbol
+
+    # @rbs return: Integer
+    def replace_delimiters: () -> Integer
+
+    # @rbs return: Integer
+    def print_version: () -> Integer
+
+    # @rbs return: Integer
+    def print_help: () -> Integer
+
+    # @rbs return: OptionParser
+    def parser: () -> OptionParser
+
+    # @rbs opt: OptionParser
+    # @rbs return: void
+    def replacement_options: (OptionParser opt) -> void
+  end
+end
