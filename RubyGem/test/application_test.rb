@@ -2,7 +2,7 @@
 # rbs_inline: enabled
 
 require 'minitest/autorun'
-require_relative '../src/application'
+require_relative '../lib/spreen_tracks'
 
 class ApplicationTest < Minitest::Test
   def setup
@@ -18,14 +18,14 @@ class ApplicationTest < Minitest::Test
   end
 
   def test_invalid_mode
-    error = assert_raises Application::InvalidModeError do
-      Application.run(mode: 'a')
+    error = assert_raises SpreenTracks::Application::InvalidModeError do
+      SpreenTracks::Application.run(mode: 'a')
     end
     assert_equal('a is invalid mode. Provide either `d`(default) or `e`.', error.message)
   end
 
   def test_replace_space_with_underscore_in_dry_run_mode
-    Application.run
+    capture_io { SpreenTracks::Application.run }
 
     assert_equal [
       './test/Artist/Album1/1-01 Title.m4a',
@@ -38,7 +38,7 @@ class ApplicationTest < Minitest::Test
   end
 
   def test_replace_space_with_underscore_in_execution_mode
-    Application.run(mode: 'e')
+    capture_io { SpreenTracks::Application.run(mode: 'e') }
 
     assert_equal [
       './test/Artist/Album1/Disc1/01_Title.m4a',
@@ -51,7 +51,7 @@ class ApplicationTest < Minitest::Test
   end
 
   def test_replace_space_with_specific_delimiter_in_execution_mode
-    Application.run(delimiter: '-', mode: 'e')
+    capture_io { SpreenTracks::Application.run(delimiter: '-', mode: 'e') }
 
     assert_equal [
       './test/Artist/Album1/Disc1/01-Title.m4a',
@@ -65,7 +65,7 @@ class ApplicationTest < Minitest::Test
 
   private
 
-  attr_reader :extension, :base_dir
+  attr_reader :base_dir
 
   # @rbs return: Array[String]
   def fixture_paths
