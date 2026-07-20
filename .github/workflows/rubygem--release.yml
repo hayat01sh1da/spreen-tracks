@@ -15,8 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # setup-ruby reads .ruby-version from working-directory (./RubyGem), where
+      # there is none — the file lives at the repo root. Pass it explicitly so
+      # the root .ruby-version stays the single source of truth.
+      - name: Resolve Ruby version
+        id: ruby
+        run: echo "version=$(cat .ruby-version)" >> "$GITHUB_OUTPUT"
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version: ${{ steps.ruby.outputs.version }}
           working-directory: ./RubyGem
           bundler-cache: true
       - uses: rubygems/release-gem@v1
