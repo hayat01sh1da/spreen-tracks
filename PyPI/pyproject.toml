@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spreen-tracks"
-version = "0.1.0"
+version = "0.1.1"
 description = "Normalise iTunes-imported track filenames with a configurable delimiter and DiscN folders."
 readme = "README.md"
 license = "MIT"
