@@ -8,7 +8,7 @@
 | Component            | Version(s) / Tooling               | Notes                                                                                                   |
 | -------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | OS baseline          | WSL (Ubuntu 25.10)                 | Shared environment across tracks.                                                                       |
-| Ruby CLI utilities   | Ruby 4.0.6 (`.ruby-version`)       | Uses Ruby stdlib (`FileUtils`) plus the gems declared inside `RubyGem/`.                                |
+| Ruby CLI utilities   | Ruby 4.0.7 (`.ruby-version`)       | Uses Ruby stdlib (`FileUtils`) plus the gems declared inside `RubyGem/`.                                |
 | Gemfile              | 4.0.16                             | Per-project dependency manifest; versions install via Bundler.                                          |
 | Bundler              | 4.0.16                             | Resolves and installs the gems declared in the Gemfile.                                                 |
 | Python CLI utilities | CPython 3.14.7 (`.python-version`) | Uses Python stdlib (`glob`, `re`, `shutil`) plus the libraries declared inside `PyPI/requirements.txt`. |
