@@ -1,7 +1,9 @@
 [![Actions Status: PyPI - CI](https://github.com/hayat01sh1da/spreen-tracks/workflows/PyPI%20-%20CI/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22PyPI%20-%20CI%22)
 [![Actions Status: PyPI - Daily Dependencies Update](https://github.com/hayat01sh1da/spreen-tracks/workflows/PyPI%20-%20Daily%20Dependencies%20Update/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22PyPI%20-%20Daily%20Dependencies%20Update%22)
+[![Actions Status: PyPI - Daily Runtime Update](https://github.com/hayat01sh1da/spreen-tracks/workflows/PyPI%20-%20Daily%20Runtime%20Update/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22PyPI%20-%20Daily%20Runtime%20Update%22)
 [![Actions Status: RubyGem - CI](https://github.com/hayat01sh1da/spreen-tracks/workflows/RubyGem%20-%20CI/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22RubyGem%20-%20CI%22)
 [![Actions Status: RubyGem - Daily Dependencies Update](https://github.com/hayat01sh1da/spreen-tracks/workflows/RubyGem%20-%20Daily%20Dependencies%20Update/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22RubyGem%20-%20Daily%20Dependencies%20Update%22)
+[![Actions Status: RubyGem - Daily Runtime Update](https://github.com/hayat01sh1da/spreen-tracks/workflows/RubyGem%20-%20Daily%20Runtime%20Update/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22RubyGem%20-%20Daily%20Runtime%20Update%22)
 [![Actions Status: CodeQL](https://github.com/hayat01sh1da/spreen-tracks/workflows/CodeQL/badge.svg)](https://github.com/hayat01sh1da/spreen-tracks/actions?query=workflow%3A%22CodeQL%22)
 
 # spreen-tracks
