@@ -1,6 +1,6 @@
 ## 1. Environment
 
-- Python 3.14.7
+- Python 3.14.8
 - pip 26.2.1
 
 ## 2. Installation
@@ -57,7 +57,7 @@ Application.run(delimiter='-', mode='e')     # execute the renames
 ```command
 $ pytest
 ============================= test session starts ==============================
-platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
+platform linux -- Python 3.14.8, pytest-9.1.1, pluggy-1.6.0
 rootdir: spreen-tracks/PyPI
 configfile: pyproject.toml
 collected 9 items
